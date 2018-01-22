@@ -8,7 +8,7 @@ var container = document.getElementById("container")
 function createNav() {
     console.log("createNav")
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', 'http://blog.thecell.eu/wp-json/wp/v2/pages');
+    ourRequest.open('GET', 'http://yourWordPressUrl.com/wp-json/wp/v2/pages'); //Insert the URL to your Wordpressbackend here
     ourRequest.onload = function () {
         if (ourRequest.status >= 200 && ourRequest.status < 400) {
             var pages = JSON.parse(ourRequest.responseText);
@@ -38,7 +38,7 @@ createNav();
 //Load Content according to the selected Menu Point (id is the Worpress id of the page)
 function getContent(id) {
     var ourRequest = new XMLHttpRequest();
-    var url = 'http://blog.thecell.eu/wp-json/wp/v2/pages/' + id;
+    var url = 'http://yourWordPressUrl.com/wp-json/wp/v2/pages/' + id; //Insert the URL to your Wordpressbackend here
     ourRequest.open('GET', url);
     ourRequest.onload = function () {
         if (ourRequest.status >= 200 && ourRequest.status < 400) {
